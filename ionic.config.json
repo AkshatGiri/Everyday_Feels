@@ -1,0 +1,8 @@
+{
+  "name": "Where Is?",
+  "app_id": "",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
