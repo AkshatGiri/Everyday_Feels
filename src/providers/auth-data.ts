@@ -12,6 +12,8 @@ import { GooglePlus } from '@ionic-native/google-plus';
 
 @Injectable()
 export class AuthData {
+
+  uid: string;
   userData: any;
   constructor(public afAuth: AngularFireAuth, private platform: Platform,private facebook: Facebook,private googleplus: GooglePlus) {
   }
@@ -93,6 +95,12 @@ signInWithGoogle(): Promise<any> {
           phone: phone
       });
     });
+  }
+
+
+
+  setUid(uid: string){
+    this.uid = uid;
   }
 
 }

@@ -28,6 +28,7 @@ export class AfterLoginPage {
      
         if(userAuth) {
           console.log("auth true!")
+          this.authData.setUid(userAuth.uid);
           this.uid = userAuth.uid;     
           this.email = userAuth.email;
           this.profilePicture = "https://www.gravatar.com/avatar/" + md5(this.email.toLowerCase(), 'hex');

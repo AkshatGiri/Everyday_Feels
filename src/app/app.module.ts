@@ -32,6 +32,8 @@ import * as ionicGalleryModal from 'ionic-gallery-modal';
 import { HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 
 
+import { HttpModule } from '@angular/http';
+
 //************** Native libraries *********************//
 import { Camera } from '@ionic-native/camera';
 
@@ -58,7 +60,8 @@ export const config = {
   
     AngularFireModule.initializeApp(config),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    HttpModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [

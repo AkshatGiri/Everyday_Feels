@@ -109,8 +109,9 @@ export class MyApp {
 
     this.pages = [ 
       // { icon:'call', title:'Contact us', component: 'ContactPage' },
-      { icon:'bookmark', title:'Version 2.0.2', component: "MainPage" }    ,
-      { icon: 'md-person', title:"Profile", component: "AfterLoginPage"}
+      { icon:'bookmark', title:'Version 2.0.2', component: "MainPage" },
+      { icon: 'md-person', title:"Profile", component: "AfterLoginPage"},
+      { icon: 'md-camera', title:"Selfie", component: "CapturePicPage"},
     ];
 
   }
