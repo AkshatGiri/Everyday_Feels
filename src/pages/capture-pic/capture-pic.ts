@@ -4,7 +4,8 @@ import {
   NavController,
   NavParams,
   LoadingController,
-  ModalController
+  ModalController,
+  AlertController
 } from "ionic-angular";
 import { Camera, CameraOptions } from "@ionic-native/camera";
 import { ToastController } from "ionic-angular";
@@ -48,7 +49,8 @@ export class CapturePicPage {
     private afAuth: AngularFireAuth,
     public loadingCtrl: LoadingController,
     public afDB: AngularFireDatabase,
-    public modalCtrl: ModalController
+    public modalCtrl: ModalController,
+    private alertCtrl: AlertController
   ) {}
 
   // Gallery
@@ -155,8 +157,8 @@ export class CapturePicPage {
           )
           .subscribe(
             data => {
-              let joyLikelihood = data.json().filename;
-              this.showToast("Data: " + joyLikelihood);
+              let emotion = data.json().emotion;
+              this.showAlert("Picture Analysis", emotion);
               console.log(data);
               resolve(data);
             },
@@ -172,4 +174,14 @@ export class CapturePicPage {
       }
     }); // Promise
   } // postRequest
+
+
+  private showAlert(title: string, message: string){
+      let alert = this.alertCtrl.create({
+        title: title,
+        subTitle: message,
+        buttons: ['Done']
+      });
+      alert.present();
+  }
 }
